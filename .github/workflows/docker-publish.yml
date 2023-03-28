@@ -35,7 +35,7 @@ jobs:
         uses: docker/metadata-action@v4.3.0
         with:
           images: |
-            my-docker-hub-namespace/my-docker-hub-repository
+            mwei/live-build-docker
             ghcr.io/${{ github.repository }}
       
       - name: Build and push Docker images
