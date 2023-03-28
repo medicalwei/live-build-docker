@@ -9,8 +9,8 @@ apt-get install --yes --no-install-recommends ca-certificates
 EOF
 RUN --mount=type=secret,id=sources_list <<EOF
 set -ex
-cp /run/secrets/sources_list /etc/apt/sources.list.d/secret.source
+cp /run/secrets/sources_list /etc/apt/sources.list.d/secret.sources
 apt-get update
 apt-get install --yes --no-install-recommends debian-cd live-build apt-utils reprepro livecd-rootfs distro-info file p7zip-full vim jq xorriso cd-boot-images-amd64
-rm /etc/apt/sources.list.d/secret.source
+rm /etc/apt/sources.list.d/secret.sources
 EOF
