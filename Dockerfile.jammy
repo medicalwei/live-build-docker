@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1.3-labs
 FROM ubuntu:jammy
 ENV DEBIAN_FRONTEND=noninteractive
-RUN <<EOF
+RUN --mount=type=secret,id=sources_list <<EOF
 cp /run/secrets/sources_list /etc/apt/sources.list.d/secret.list
 apt-get update -q -q
 apt-get full-upgrade --yes
