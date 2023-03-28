@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN --mount=type=secret,id=sources_list <<EOF
 apt-get update -q -q
 apt-get full-upgrade --yes
-apt-get install --yes --no-install-recommends ca-certificates
+apt-get install --yes --no-install-recommends ca-certificates gnupg
 gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys df9464c8e21ac4dead2fcdc43f4b717d16d483ad
 gpg --output /etc/apt/trusted.gpg.d/secret-archive.pgp --export df9464c8e21ac4dead2fcdc43f4b717d16d483ad
 cp /run/secrets/sources_list /etc/apt/sources.list.d/secret.list
