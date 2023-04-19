@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - 'main'
+      - 'jammy'
   workflow_dispatch:
 
 jobs:
